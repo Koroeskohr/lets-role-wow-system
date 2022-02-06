@@ -1,0 +1,1245 @@
+[
+    {
+        "id": "variables",
+        "columns": [
+            "id",
+            "value"
+        ],
+        "data": []
+    },
+    {
+        "id": "race",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "human",
+                "name": "Humain"
+            },
+            {
+                "id": "dwarf",
+                "name": "Nain"
+            },
+            {
+                "id": "gnome",
+                "name": "Gnome"
+            },
+            {
+                "id": "nightelf",
+                "name": "Elfe de la Nuit"
+            },
+            {
+                "id": "draenei",
+                "name": "Draeneï"
+            },
+            {
+                "id": "worgen",
+                "name": "Worgen"
+            },
+            {
+                "id": "pandaren",
+                "name": "Pandaren"
+            },
+            {
+                "id": "orc",
+                "name": "Orc"
+            },
+            {
+                "id": "undead",
+                "name": "Mort-Vivant"
+            },
+            {
+                "id": "tauren",
+                "name": "Tauren"
+            },
+            {
+                "id": "troll",
+                "name": "Troll"
+            },
+            {
+                "id": "bloodelf",
+                "name": "Elfe de Sang"
+            },
+            {
+                "id": "goblin",
+                "name": "Gobelin"
+            }
+        ]
+    },
+    {
+        "id": "faction",
+        "columns": [
+            "id",
+            "name",
+            "desc"
+        ],
+        "data": [
+            {
+                "id": "alliance",
+                "name": "Alliance",
+                "desc": "L’inébranlable Alliance reste fidèle à ses traditions. Ses membres croient en la justice ainsi qu’au devoir et protègent le royaume d’Azeroth de quiconque le menace, y compris des sauvages de la Horde."
+            },
+            {
+                "id": "horde",
+                "name": "Horde",
+                "desc": "Indomptable, la Horde ne vit que par et pour l’unité. Ses membres sont de fervents défenseurs de la liberté et de l’espoir fermement opposés à quiconque menace leurs idéaux, dont l’intransigeante Alliance."
+            }
+        ]
+    },
+    {
+        "id": "classes",
+        "columns": [
+            "id",
+            "name",
+            "spec"
+        ],
+        "data": [
+            {
+                "id": "warrior",
+                "name": "Guerrier",
+                "spec": "Tank, Spécialiste des dégâts"
+            },
+            {
+                "id": "paladin",
+                "name": "Paladin",
+                "spec": "Tank, Soigneur, Spécialiste des dégâts"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur",
+                "spec": "Dégâts"
+            },
+            {
+                "id": "thief",
+                "name": "Voleur",
+                "spec": "Spécialiste des dégâts"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre",
+                "spec": "Soigneur, Spécialiste des dégâts"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman",
+                "spec": "Soigneur, Spécialiste des dégâts"
+            },
+            {
+                "id": "mage",
+                "name": "Mage",
+                "spec": "Dégâts"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste",
+                "spec": "Spécialiste des dégâts"
+            },
+            {
+                "id": "monk",
+                "name": "Moine",
+                "spec": "Tank, Soigneur, Spécialiste des dégâts"
+            },
+            {
+                "id": "druid",
+                "name": "Druide",
+                "spec": "Tank, Soigneur, Spécialiste des dégâts"
+            },
+            {
+                "id": "demonhunter",
+                "name": "Chasseur de Démons",
+                "spec": "Tank, Spécialiste des dégâts"
+            },
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort",
+                "spec": "Tank, Spécialiste des dégâts physiques de mêlée"
+            }
+        ]
+    },
+    {
+        "id": "advantage",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "1",
+                "name": "Jet normal"
+            },
+            {
+                "id": "2",
+                "name": "Jet avec Avantage"
+            },
+            {
+                "id": "3",
+                "name": "Jet avec Désavantage"
+            }
+        ]
+    },
+    {
+        "id": "human",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            },
+            {
+                "id": "paladin",
+                "name": "Paladin"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            }
+        ]
+    },
+    {
+        "id": "bloodelf",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "paladin",
+                "name": "Paladin"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            },
+            {
+                "id": "demonhunter",
+                "name": "Chasseur de Démon"
+            }
+        ]
+    },
+    {
+        "id": "draenei",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "paladin",
+                "name": "Paladin"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            }
+        ]
+    },
+    {
+        "id": "dwarf",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            },
+            {
+                "id": "paladin",
+                "name": "Paladin"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            }
+        ]
+    },
+    {
+        "id": "gnome",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            }
+        ]
+    },
+    {
+        "id": "orc",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            }
+        ]
+    },
+    {
+        "id": "troll",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "druid",
+                "name": "Druide"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            }
+        ]
+    },
+    {
+        "id": "undead",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            }
+        ]
+    },
+    {
+        "id": "pandaren",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            },
+            {
+                "id": "paladin",
+                "name": "Paladin"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            }
+        ]
+    },
+    {
+        "id": "tauren",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "druid",
+                "name": "Druide"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "monk",
+                "name": "Moine"
+            },
+            {
+                "id": "paladin",
+                "name": "Paladin"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            }
+        ]
+    },
+    {
+        "id": "nightelf",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "druid",
+                "name": "Druide"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            },
+            {
+                "id": "demonhunter",
+                "name": "Chasseur de Démons"
+            }
+        ]
+    },
+    {
+        "id": "worgen",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "druid",
+                "name": "Druide"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            }
+        ]
+    },
+    {
+        "id": "goblin",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "deathknight",
+                "name": "Chevalier de la Mort"
+            },
+            {
+                "id": "hunter",
+                "name": "Chasseur"
+            },
+            {
+                "id": "mage",
+                "name": "Mage"
+            },
+            {
+                "id": "priest",
+                "name": "Prêtre"
+            },
+            {
+                "id": "rogue",
+                "name": "Voleur"
+            },
+            {
+                "id": "shaman",
+                "name": "Chaman"
+            },
+            {
+                "id": "warlock",
+                "name": "Démoniste"
+            },
+            {
+                "id": "warrior",
+                "name": "Guerrier"
+            }
+        ]
+    },
+    {
+        "id": "shaman",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "amelioration",
+                "name": "Amélioration"
+            },
+            {
+                "id": "elementary",
+                "name": "Elémentaire"
+            },
+            {
+                "id": "restauration",
+                "name": "Restauration"
+            }
+        ]
+    },
+    {
+        "id": "hunter",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "animalhandling",
+                "name": "Maitrise des bêtes"
+            },
+            {
+                "id": "precision",
+                "name": "Précision"
+            },
+            {
+                "id": "survival",
+                "name": "Survie"
+            }
+        ]
+    },
+    {
+        "id": "demonhunter",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "devastation",
+                "name": "Dévastation"
+            },
+            {
+                "id": "vengeance",
+                "name": "Vengeance"
+            }
+        ]
+    },
+    {
+        "id": "deathknight",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "frost",
+                "name": "Givre"
+            },
+            {
+                "id": "blood",
+                "name": "Sang"
+            },
+            {
+                "id": "unholy",
+                "name": "Impie"
+            }
+        ]
+    },
+    {
+        "id": "warlock",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "demonology",
+                "name": "Démonologie"
+            },
+            {
+                "id": "affliction",
+                "name": "Affliction"
+            },
+            {
+                "id": "destruction",
+                "name": "Destruction"
+            }
+        ]
+    },
+    {
+        "id": "druid",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "balance",
+                "name": "Equilibre"
+            },
+            {
+                "id": "fierce",
+                "name": "Farouche"
+            },
+            {
+                "id": "guardian",
+                "name": "Gardien"
+            },
+            {
+                "id": "restauration",
+                "name": "Restauration"
+            }
+        ]
+    },
+    {
+        "id": "warrior",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "weapons",
+                "name": "Armes"
+            },
+            {
+                "id": "fury",
+                "name": "Fureur"
+            },
+            {
+                "id": "protection",
+                "name": "Protection"
+            }
+        ]
+    },
+    {
+        "id": "mage",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "arcane",
+                "name": "Arcanes"
+            },
+            {
+                "id": "frost",
+                "name": "Givre"
+            },
+            {
+                "id": "fire",
+                "name": "Feu"
+            }
+        ]
+    },
+    {
+        "id": "monk",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "masterbrewer",
+                "name": "Maitre Brasseur"
+            },
+            {
+                "id": "windwalker",
+                "name": "Marche-Vent"
+            },
+            {
+                "id": "fogweaver",
+                "name": "Tisse-Brume"
+            }
+        ]
+    },
+    {
+        "id": "paladin",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "protection",
+                "name": "Protection"
+            },
+            {
+                "id": "holy",
+                "name": "Sacré"
+            },
+            {
+                "id": "vindict",
+                "name": "Vindicte"
+            }
+        ]
+    },
+    {
+        "id": "priest",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "discipline",
+                "name": "Discipline"
+            },
+            {
+                "id": "shadow",
+                "name": "Ombre"
+            },
+            {
+                "id": "holy",
+                "name": "Sacré"
+            }
+        ]
+    },
+    {
+        "id": "thief",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "assassin",
+                "name": "Assassinat"
+            },
+            {
+                "id": "finesse",
+                "name": "Finesse"
+            },
+            {
+                "id": "outlaw",
+                "name": "Hors La Loi"
+            }
+        ]
+    },
+    {
+        "id": "dices",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "d4",
+                "name": "d4"
+            },
+            {
+                "id": "d6",
+                "name": "d6"
+            },
+            {
+                "id": "d8",
+                "name": "d8"
+            },
+            {
+                "id": "d10",
+                "name": "d10"
+            },
+            {
+                "id": "d12",
+                "name": "d12"
+            },
+            {
+                "id": "d20",
+                "name": "d20"
+            }
+        ]
+    },
+    {
+        "id": "windows",
+        "columns": [
+            "id",
+            "name",
+            "view"
+        ],
+        "data": [
+            {
+                "id": "1",
+                "name": "Stats.",
+                "view": "character"
+            },
+            {
+                "id": "2",
+                "name": "Techniques / Sorts",
+                "view": "spells"
+            },
+            {
+                "id": "3",
+                "name": "Equip. & Attrib.",
+                "view": "equipment"
+            },
+            {
+                "id": "4",
+                "name": "Inventaire",
+                "view": "inventory"
+            },
+            {
+                "id": "5",
+                "name": "Profil",
+                "view": "profil"
+            },
+            {
+                "id": "6",
+                "name": "Notes",
+                "view": "notes"
+            }
+        ]
+    },
+    {
+        "id": "loyal",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "loyal",
+                "name": "Loyal"
+            },
+            {
+                "id": "neutral",
+                "name": "Neutre"
+            },
+            {
+                "id": "chaotic",
+                "name": "Chaotique"
+            }
+        ]
+    },
+    {
+        "id": "good",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "good",
+                "name": "Bon"
+            },
+            {
+                "id": "neutral",
+                "name": "Neutre"
+            },
+            {
+                "id": "bad",
+                "name": "Mauvais"
+            }
+        ]
+    },
+    {
+        "id": "guildtab",
+        "columns": [
+            "id",
+            "name",
+            "view"
+        ],
+        "data": [
+            {
+                "id": "1",
+                "name": "Infos.",
+                "view": "guildinfo"
+            },
+            {
+                "id": "2",
+                "name": "Coffre de Guilde",
+                "view": "guildinventory"
+            }
+        ]
+    },
+    {
+        "id": "tests",
+        "columns": [
+            "id",
+            "name",
+            "tabid"
+        ],
+        "data": [
+            {
+                "id": "Aucun",
+                "name": "Pas de Mod.",
+                "tabid": "no"
+            },
+            {
+                "id": "Force",
+                "name": "Mod. Force",
+                "tabid": "strengthmodifier"
+            },
+            {
+                "id": "Adresse",
+                "name": "Mod. Adresse",
+                "tabid": "agilitymodifier"
+            },
+            {
+                "id": "Intelligence",
+                "name": "Mod. Intelligence",
+                "tabid": "intelligencemodifier"
+            },
+            {
+                "id": "Charisme",
+                "name": "Mod. Charisme",
+                "tabid": "charismamodifier"
+            },
+            {
+                "id": "Sagesse",
+                "name": "Mod. Sagesse",
+                "tabid": "wisdommodifier"
+            },
+            {
+                "id": "Constitution",
+                "name": "Mod. Constitution",
+                "tabid": "fortitudemodifier"
+            }
+        ]
+    },
+    {
+        "id": "dice_privacy",
+        "columns": [
+            "id",
+            "name"
+        ],
+        "data": [
+            {
+                "id": "all",
+                "name": "Public"
+            },
+            {
+                "id": "gm",
+                "name": "Moi & le MJ"
+            },
+            {
+                "id": "gmonly",
+                "name": "Seulement MJ"
+            }
+        ]
+    },
+    {
+        "id": "spelllevel",
+        "columns": [
+            "id",
+            "mana"
+        ],
+        "data": [
+            {
+                "id": "test",
+                "mana": "0"
+            },
+            {
+                "id": "1",
+                "mana": "4"
+            },
+            {
+                "id": "2",
+                "mana": "8"
+            },
+            {
+                "id": "3",
+                "mana": "12"
+            },
+            {
+                "id": "4",
+                "mana": "16"
+            },
+            {
+                "id": "5",
+                "mana": "20"
+            },
+            {
+                "id": "6",
+                "mana": "24"
+            },
+            {
+                "id": "7",
+                "mana": "28"
+            },
+            {
+                "id": "8",
+                "mana": "32"
+            },
+            {
+                "id": "9",
+                "mana": "36"
+            }
+        ]
+    }
+]
