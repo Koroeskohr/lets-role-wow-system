@@ -19,6 +19,24 @@ init = function(sheet) {
 };
 
 
+function Attribute(id) {
+    this.id = id
+    this.label = _(id)
+}
+
+Attribute.prototype.getModifier = function() {
+    return this.id + 'modifier'
+}
+
+Attribute.prototype.getRoll = function() {
+    return this.id + 'roll'
+}
+
+Attribute.prototype.getSaveRoll = function() {
+    return this.id + 'saveroll'
+}
+
+
 // Variable
 //I tried a different methode for the monster sheets
 //This variable is used in InitMonster
@@ -30,6 +48,15 @@ let Attributes = {
     wisdom: { name: _("Sagesse") },
     charisma: { name: _("Charisme") },
 };
+
+const Attributes2 = [
+    new Attribute('strength'),
+    new Attribute('agility'),
+    new Attribute('fortitude'),
+    new Attribute('intelligence'),
+    new Attribute('wisdom'),
+    new Attribute('charisma'),
+]
 
 
 //The Main sheet initialization
@@ -53,99 +80,23 @@ const initGuild = function(sheet){
 
 //We initialize everything linked to the mechanics of the stats
 const initStats = function(sheet) {
-    
-    let strengthR = sheet.get("strengthroll");
-    let strengthL = sheet.get("strengthlabel");
-    let strengthSR = sheet.get("strengthsaveroll");
     let strength = sheet.get("strength");
-
-    let agilityR = sheet.get("agilityroll");    
-    let agilityL = sheet.get("agilitylabel");
-    let agilitySR = sheet.get("agilitysaveroll");    
-    
-    let intelligenceR = sheet.get("intelligenceroll");
-    let intelligenceL = sheet.get("intelligencelabel");
-    let intelligenceSR = sheet.get("intelligencesaveroll");    
-    
-    let wisdomR = sheet.get("wisdomroll");
-    let wisdomL = sheet.get("wisdomlabel");
-    let wisdomSR = sheet.get("wisdomsaveroll");    
-    
-    let charismaR = sheet.get("charismaroll");
-    let charismaL = sheet.get("charismalabel");
-    let charismaSR = sheet.get("charismasaveroll");    
-    
-    let fortitudeR = sheet.get("fortituderoll");
-    let fortitudeL = sheet.get("fortitudelabel");
-    let fortitudeSR = sheet.get("fortitudesaveroll");    
-    
     //If the strength changes, we update the max inventory
     strength.on("update", function(){
             let inventory= sheet.get("inventorymax");
             let strengthvalue= sheet.get("strength").value();
             sheet.get("inventorymax").value(sheet.get("strength").value()*4);
     });
-
-    //For each clickable value, we launch the good dice
-    strengthR.on("click", function(){
-        attribRoll(sheet,"1d20","strengthmodifier", "Force");
-    });
-    strengthL.on("click", function(){
-        attribRoll(sheet,"1d20","strengthmodifier", "Force");
-    });
-    strengthSR.on("click", function(){
-        attribRoll(sheet,"1d20","strengthsave", "Sauvegarde de Force");
-    });
     
-    agilityR.on("click", function(){
-        attribRoll(sheet,"1d20", "agilitymodifier", "Agilité");
-    });
-    agilityL.on("click", function(){
-        attribRoll(sheet,"1d20", "agilitymodifier", "Agilité");
-    });
-    agilitySR.on("click", function(){
-        attribRoll(sheet,"1d20", "agilitysave", "Sauvegarde d'Agilité");
-    });
-    
-    intelligenceR.on("click", function(){
-        attribRoll(sheet,"1d20", "intelligencemodifier", "Intelligence");
-    });
-    intelligenceL.on("click", function(){
-        attribRoll(sheet,"1d20", "intelligencemodifier", "Intelligence");
-    });
-    intelligenceSR.on("click", function(){
-        attribRoll(sheet,"1d20", "intelligencesave", "Sauvegarde d'Intelligence");
-    });
-    
-    wisdomR.on("click", function(){
-        attribRoll(sheet,"1d20", "wisdommodifier", "Sagesse");
-    });
-    wisdomL.on("click", function(){
-        attribRoll(sheet,"1d20", "wisdommodifier", "Sagesse");
-    });
-    wisdomSR.on("click", function(){
-        attribRoll(sheet,"1d20", "wisdomsave", "Sauvegarde de Sagesse");
-    });
-    
-    charismaR.on("click", function(){
-        attribRoll(sheet,"1d20", "charismamodifier", "Charisme");
-    });
-    charismaL.on("click", function(){
-        attribRoll(sheet,"1d20", "charismamodifier", "Charisme");
-    });
-    charismaSR.on("click", function(){
-        attribRoll(sheet,"1d20", "charismasave", "Sauvegarde de Charisme");
-    });
-    
-    fortitudeR.on("click", function(){
-        attribRoll(sheet,"1d20", "fortitudemodifier", "Constitution");
-    });
-    fortitudeL.on("click", function(){
-        attribRoll(sheet,"1d20", "fortitudemodifier", "Constitution");
-    });
-    fortitudeSR.on("click", function(){
-        attribRoll(sheet,"1d20", "fortitudesave", "Sauvegarde de Constitution");
-    });
+    each(Attributes2, function(attr) {
+        const roll = sheet.get(attr.id + 'roll')
+        const label = sheet.get(attr.id + 'label')
+        const saveroll = sheet.get(attr.id + 'saveroll')
+        
+        roll.on("click", function() { attribRoll(sheet,"1d20", attr.getModifier(), attr.label) })
+        label.on("click", function() { attribRoll(sheet,"1d20", attr.getModifier(), attr.label) })
+        saveroll.on("click", function() { attribRoll(sheet,"1d20", attr.getSaveRoll(), "Sauvegarde de" + attr.label) })
+    })
 };
 
 //We initialize every skill and their computational things
@@ -965,4 +916,3 @@ getBarAttributes = function(sheet) {
 
     return {};
 };
-
