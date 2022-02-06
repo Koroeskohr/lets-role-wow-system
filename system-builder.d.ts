@@ -15,6 +15,8 @@ declare class SingleDiceResult {
     discarded: boolean;
 }
 
+type Visibility = 'all' | 'gm' | 'gmonly'
+
 declare class DiceResult {
     /**
      * The title of this roll, only available at the top
@@ -29,7 +31,7 @@ declare class DiceResult {
     /**
      * Who can view this roll ? Possible value : "visible", "gm", "gmonly"
      */
-    visibility: string;
+    visibility: Visibility;
 
     /**
      * Type of roll. Either "number", "dice" or "comparison"
@@ -136,11 +138,12 @@ declare class Sheet {
     public name(): string;
 }
 
+
 declare class Dice {
     /**
     * Roll dice
     */
-    static roll(sheet: Sheet, expression: string, title: string, visibility: string, actions: any): void
+    static roll(sheet: Sheet, expression: string, title: string, visibility?: Visibility, actions?: any): void
 
     /**
      * Create a new DiceBuilder instance
@@ -330,3 +333,10 @@ declare var dropDice: (result: DiceResult, to: Sheet) => void;
 declare var initRoll: (result: DiceResult, callback: (view: string, onRender: (sheet: Sheet) => void) => void) => void;
 declare var getReferences: (sheet: Sheet) => any;
 declare var getBarAttributes: (sheet: Sheet) => any;
+
+declare function _(key: string): string;
+
+declare function each<T>(data: Record<string, T>, callback: (t: T, key?: string) => void);
+declare function each<T>(data: T[], callback: (t: T) => void);
+
+declare function log(message: string): void;
