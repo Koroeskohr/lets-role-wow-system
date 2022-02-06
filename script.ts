@@ -80,14 +80,6 @@ const initGuild = function (sheet) {
 
 //We initialize everything linked to the mechanics of the stats
 const initStats = function (sheet) {
-    let strength = sheet.get("strength");
-    //If the strength changes, we update the max inventory
-    strength.on("update", function () {
-        let inventory = sheet.get("inventorymax");
-        let strengthvalue = sheet.get("strength").value();
-        sheet.get("inventorymax").value(sheet.get("strength").value() * 4);
-    });
-
     each(Attributes2, function (attr) {
         const roll = sheet.get(attr.id + 'roll')
         const label = sheet.get(attr.id + 'label')
