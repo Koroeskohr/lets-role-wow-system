@@ -15,7 +15,8 @@ declare class SingleDiceResult {
     discarded: boolean;
 }
 
-type Visibility = 'all' | 'gm' | 'gmonly'
+type Visibility = 'all' | 'gm' | 'gmonly';
+type RollType = 'number' | 'dice' | 'comparison';
 
 declare class DiceResult {
     /**
@@ -36,7 +37,7 @@ declare class DiceResult {
     /**
      * Type of roll. Either "number", "dice" or "comparison"
      */
-    type: string;
+    type: RollType;
 
     /**
      * The sum of the roll
@@ -118,14 +119,31 @@ declare class Sheet {
     public getVariable(id: string): number|string;
 
     /**
+     * Get the unique identifier of the sheet
+     */
+    public getSheetId(): number;
+
+    /**
+     * Get the type of the sheet
+     */
+    public getSheetType(): 'character' | 'prompt';
+    // overloading until I get decent coverage on that type
+    public getSheetType(): string;
+
+    /**
+     * Get component values.
+     */
+    public getData(): Record<string, any>;
+
+    /**
      * Set multiple components values at the same time.
      */
-    public setData(data: any): void;
+    public setData(data: Record<string, number | string>): void;
 
     /**
      * Prompt the user for additional information
      */
-    public prompt(title: string, view: string, callback: Function): void;
+    public prompt(title: string, view: string, callback: (viewData: any /* FIXME: */) => void, callbackInit: (view: Sheet) => void): void;
 
     /**
      * Get the id of the sheet
@@ -138,12 +156,25 @@ declare class Sheet {
     public name(): string;
 }
 
+// Probably not intented to be public, documenting for the sake of exhaustivity
+type _DiceResult = {
+    _children: _DiceResult[];
+    _dice: SingleDiceResult[];
+    _tags: string[];
+    _hasExtractedDice: boolean;
+    _hasExtractedTags: boolean;
+    _hasExtractedChildren: boolean;
+    _raw: object;
+    _expression: string; // TODO: proper type for dice expressions?
+    _visibility: Visibility
+ };
 
+type DiceActions = Record<string, (dice: _DiceResult) => void>
 declare class Dice {
     /**
     * Roll dice
     */
-    static roll(sheet: Sheet, expression: string, title: string, visibility?: Visibility, actions?: any): void
+    static roll(sheet: Sheet, expression: string, title: string, visibility?: Visibility, actions?: DiceActions): void
 
     /**
      * Create a new DiceBuilder instance
@@ -151,6 +182,7 @@ declare class Dice {
     static create(base: string): DiceBuilder;
 }
 
+type EventType = 'click' | 'update' | 'mouseenter' | 'mouseleave' | 'keyup';
 declare class Component {
     /**
      * Get the parent component
@@ -166,24 +198,24 @@ declare class Component {
      * The callback function is called when the event is triggered
      * Possible events : click, update, mouseenter, mouseleave, keyup
      */
-    public on(event: string, callback: Function): void;
+    public on(event: EventType, callback: Function): void;
 
     /**
      * The callback function is called when the event is triggered on
      * one of the delegates
      * Possible events : click, update, mouseenter, mouseleave, keyup
      */
-    public on(event: string, delegate: string, callback: Function): void;
+    public on(event: EventType, delegate: string, callback: Function): void;
 
     /**
      * Remove the listening of an event
      */
-    public off(event: string): void;
+    public off(event: EventType): void;
 
     /**
      * Remove the listening of a delegated event
      */
-    public off(event: string, delegate: string): void;
+    public off(event: EventType, delegate: string): void;
 
     /**
      * Hide the component
@@ -266,8 +298,8 @@ declare class DiceBuilder {
     public round(): DiceBuilder;
     public ceil(): DiceBuilder;
     public floor(): DiceBuilder;
-    public keeph(max: number): DiceBuilder;
-    public keepl(max: number): DiceBuilder;
+    public keeph(max?: number): DiceBuilder;
+    public keepl(max?: number): DiceBuilder;
     public remh(max: number): DiceBuilder;
     public reml(max: number): DiceBuilder;
     public expl(...explodes: number[]): DiceBuilder;
@@ -328,11 +360,15 @@ declare class Table {
 
 declare var sheet: Sheet;
 declare var init: (sheet: Sheet) => void;
-declare var drop: (from: Sheet, to: Sheet) => void;
+declare var drop: (from: Sheet, to: Sheet) => string | void;
 declare var dropDice: (result: DiceResult, to: Sheet) => void;
 declare var initRoll: (result: DiceResult, callback: (view: string, onRender: (sheet: Sheet) => void) => void) => void;
-declare var getReferences: (sheet: Sheet) => any;
-declare var getBarAttributes: (sheet: Sheet) => any;
+declare var getReferences: (sheet: Sheet) => Record<string, number | string>;
+
+type BarLabel = string;
+type BarAttributeId = string;
+type BarAttributeValue = number | string;
+declare var getBarAttributes: (sheet: Sheet) => Record<BarLabel, [BarAttributeId, BarAttributeValue]>;
 
 declare function _(key: string): string;
 
@@ -340,3 +376,5 @@ declare function each<T>(data: Record<string, T>, callback: (t: T, key?: string)
 declare function each<T>(data: T[], callback: (t: T) => void);
 
 declare function log(message: string): void;
+
+declare function wait(ms: number, callback: () => void): void;
