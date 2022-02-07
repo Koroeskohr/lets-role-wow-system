@@ -1,7 +1,5 @@
-/// <reference types="./system-builder" />
-
 // fonctions
-init = function (sheet) {
+init = function (sheet: Sheet) {
     //We have 3 types of sheets
     //Main is the character
     //Monster is for... monsters
@@ -19,21 +17,25 @@ init = function (sheet) {
 };
 
 
-function Attribute(id) {
-    this.id = id
-    this.label = _(id)
-}
+class Attribute {
+    id: string;
+    label: string;
+    constructor(id) {
+        this.id = id
+        this.label = _(id)    
+    }
 
-Attribute.prototype.getModifier = function () {
-    return this.id + 'modifier'
-}
+    getModifier () {
+        return this.id + 'modifier'
+    }
+    
+    getRoll () {
+        return this.id + 'roll'
+    }
 
-Attribute.prototype.getRoll = function () {
-    return this.id + 'roll'
-}
-
-Attribute.prototype.getSaveRoll = function () {
-    return this.id + 'saveroll'
+    getSaveRoll () {
+        return this.id + 'saveroll'
+    }    
 }
 
 
@@ -49,7 +51,7 @@ let Attributes = {
     charisma: { name: _("Charisme") },
 };
 
-const Attributes2 = [
+const Attributes2: Attribute[] = [
     new Attribute('strength'),
     new Attribute('agility'),
     new Attribute('fortitude'),
@@ -60,7 +62,7 @@ const Attributes2 = [
 
 
 //The Main sheet initialization
-const initMain = function (sheet) {
+const initMain = function (sheet: Sheet) {
     //function names are self-explanatory
     initStats(sheet);
     initSkills(sheet);
@@ -73,13 +75,13 @@ const initMain = function (sheet) {
 
 };
 
-const initGuild = function (sheet) {
+const initGuild = function (sheet: Sheet) {
     initItems(sheet);
 
 };
 
 //We initialize everything linked to the mechanics of the stats
-const initStats = function (sheet) {
+const initStats = function (sheet: Sheet) {
     each(Attributes2, function (attr) {
         const roll = sheet.get(attr.id + 'roll')
         const label = sheet.get(attr.id + 'label')
@@ -92,7 +94,7 @@ const initStats = function (sheet) {
 };
 
 //We initialize every skill and their computational things
-const initSkills = function (sheet) {
+const initSkills = function (sheet: Sheet) {
     let acrobatiesroll = sheet.get("acrobatieroll");
     let athletismeroll = sheet.get("athletismeroll");
     let aviationroll = sheet.get("aviationroll");
@@ -274,7 +276,7 @@ const initSkills = function (sheet) {
 
 
 //Simple thing to make sur that when you change race, the classe changes
-const initRace = function (sheet) {
+const initRace = function (sheet: Sheet) {
     let race = sheet.get("race");
     let classe = sheet.get("class");
 
@@ -284,7 +286,7 @@ const initRace = function (sheet) {
 
 };
 
-const initLongRest = function (sheet) {
+const initLongRest = function (sheet: Sheet) {
 
     //The long rest modifies every value needed
     let longrest = sheet.get("longrest");
@@ -319,7 +321,7 @@ const initLongRest = function (sheet) {
 * This component will fire the event when it is clicked, we can then gather from which repeated object it comes from (index)
 * and from there can work with anything
 */
-const initWeapons = function (sheet) {
+const initWeapons = function (sheet: Sheet) {
     //This reveals the details
     sheet.get('weapons_repeater').on("click", "clear_weapon_name_btn", function (component) {
         const index = component.index();
@@ -451,7 +453,7 @@ const initWeapons = function (sheet) {
 };
 
 //Same inner workings as for the weapons
-const initSpells = function (sheet) {
+const initSpells = function (sheet: Sheet) {
 
     sheet.get('spells_repeater').on("click", "clear_spell_name_btn", function (component) {
         const index = component.index();
@@ -594,7 +596,7 @@ const initSpells = function (sheet) {
 };
 
 //Same inner workings as for the weapons
-const initArmors = function (sheet) {
+const initArmors = function (sheet: Sheet) {
 
     sheet.get('armors_repeater').on("click", "clear_armor_name_btn", function (component) {
         const index = component.index();
@@ -615,7 +617,7 @@ const initArmors = function (sheet) {
 
 //Simple working than weapons
 //In this case there is no automation except for the detail showing
-const initItems = function (sheet) {
+const initItems = function (sheet: Sheet) {
 
     sheet.get('items_repeater').on("click", "clear_item_name_btn", function (component) {
         const index = component.index();
@@ -634,7 +636,7 @@ const initItems = function (sheet) {
     });
 };
 
-const initMonster = function (sheet) {
+const initMonster = function (sheet: Sheet) {
     //Pour chaque attribut on update le modifier, on gère l'update si la valeur est modifiée et on instaure les dice rolls aux clics
     initMonsterSpells(sheet);
     each(Attributes, function (attribut, key) {
@@ -669,7 +671,7 @@ const initMonster = function (sheet) {
 //Same inner workings as for the weapons
 //Why is there a special init for the monster spells ? 
 //Because they lack some data that a player has, so we have to "simulate it" in order to make each throw (like the mastering value, which is defaulted to 2)
-const initMonsterSpells = function (sheet) {
+const initMonsterSpells = function (sheet: Sheet) {
 
     sheet.get('spells_repeater').on("click", "clear_spell_name_btn", function (component) {
         const index = component.index();
@@ -856,7 +858,7 @@ const modifySpecs = /**
 
 
 
-const attribRoll = function (sheet, diceWanted, attrib, attribName) {
+const attribRoll = function (sheet: Sheet, diceWanted, attrib, attribName) {
     let modifier = sheet.get(attrib).value();
     let advantage;
     let privacy = sheet.get("diceprivacy").value();
@@ -891,7 +893,7 @@ const attribRoll = function (sheet, diceWanted, attrib, attribName) {
 
 
 //This enables putting the quick resources in the bar surrounding the player's token
-getBarAttributes = function (sheet) {
+getBarAttributes = function (sheet: Sheet) {
     if (sheet.id() === "main") {
         return {
             "HP": ["currenthp", "maxhp"],
